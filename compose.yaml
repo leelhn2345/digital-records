@@ -11,13 +11,18 @@ services:
 
   digital-records:
     image: digital-records
+    container_name: digital-records
     profiles:
       - prod
     build:
       context: .
       dockerfile: Dockerfile
     labels:
-      - traefik.http.routers.app.rule=Host(`digitalrecords.cloud`)
+      - traefik.enable=true
+      - traefik.http.routers.digital-records.rule=Host(`digitalrecords.cloud`)
+      - traefik.http.routers.digital-records.entrypoints=websecure
+      - traefik.http.routers.digital-records.tls.certresolver=myresolver
+      - com.centurylinklabs.watchtower.enable=true
     expose:
       - 80
     networks:
