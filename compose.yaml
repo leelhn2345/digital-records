@@ -1,0 +1,28 @@
+services:
+  digital-record-dev:
+    image: digital-records
+    profiles:
+      - dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:80
+
+  digital-records:
+    image: digital-records
+    profiles:
+      - prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+    labels:
+      - traefik.http.routers.app.rule=Host(`digitalrecords.cloud`)
+    expose:
+      - 80
+    networks:
+      - digital-network
+
+networks:
+  digital-network:
+    external: true
