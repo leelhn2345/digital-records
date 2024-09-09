@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - main
-defaults:
-  run:
-    working-directory: ./client
+# defaults:
+#   run:
+#     working-directory: ./client
 
 jobs:
   code_quality:
