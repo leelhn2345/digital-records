@@ -24,6 +24,9 @@ services:
     expose:
       - 80
 
+    networks:
+      - digital-network
+
 networks:
-  default:
-    name: digital-network
+  digital-network:
+    external: true
