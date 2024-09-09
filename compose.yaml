@@ -1,8 +1,9 @@
 services:
   digital-record-dev:
-    image: digital-records
     profiles:
       - dev
+    image: digital-records
+    container_name: digital-records
     build:
       context: .
       dockerfile: Dockerfile
@@ -10,13 +11,10 @@ services:
       - 8080:80
 
   digital-records:
-    image: digital-records
-    container_name: digital-records
     profiles:
       - prod
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: leelhn2345/digital-records
+    container_name: digital-records
     labels:
       - traefik.enable=true
       - traefik.http.routers.digital-records.rule=Host(`digitalrecords.cloud`)
@@ -25,9 +23,7 @@ services:
       - com.centurylinklabs.watchtower.enable=true
     expose:
       - 80
-    networks:
-      - digital-network
 
 networks:
-  digital-network:
-    external: true
+  default:
+    name: digital-network
