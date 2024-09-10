@@ -17,7 +17,7 @@ services:
     container_name: digital-records
     labels:
       - traefik.enable=true
-      - traefik.http.routers.${SERVICE_NAME}.rule=Host(`${SERVICE_URL}`) || Host (`www.${SERVICE_URL}`)
+      - traefik.http.routers.${SERVICE_NAME}.rule=Host(`${DOMAIN_URL}`) || Host (`www.${DOMAIN_URL}`)
       - traefik.http.routers.${SERVICE_NAME}.entrypoints=websecure
       - traefik.http.routers.${SERVICE_NAME}.tls.certresolver=myresolver
       - com.centurylinklabs.watchtower.enable=true
