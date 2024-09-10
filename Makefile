@@ -4,8 +4,8 @@ dev-down:
 dev-up:
 	docker compose --profile dev up -d
 
-prod-down:
+down:
 	docker compose --profile prod down
 
-prod-up:
+up:
 	docker compose --profile prod up -d

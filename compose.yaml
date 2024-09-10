@@ -17,16 +17,17 @@ services:
     container_name: digital-records
     labels:
       - traefik.enable=true
-      - traefik.http.routers.digital-records.rule=Host(`digitalrecords.cloud`)
-      - traefik.http.routers.digital-records.entrypoints=websecure
-      - traefik.http.routers.digital-records.tls.certresolver=myresolver
+      - traefik.http.routers.${SERVICE_NAME}.rule=Host(`${SERVICE_URL}`) || Host (`www.${SERVICE_URL}`)
+      - traefik.http.routers.${SERVICE_NAME}.entrypoints=websecure
+      - traefik.http.routers.${SERVICE_NAME}.tls.certresolver=myresolver
       - com.centurylinklabs.watchtower.enable=true
+      # - traefik.http.routers.digital-records.middlewares=redirect-www-to-root@file
     expose:
       - 80
 
     networks:
-      - digital-network
+      - shared-network
 
 networks:
-  digital-network:
+  shared-network:
     external: true
