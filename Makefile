@@ -9,3 +9,6 @@ down:
 
 up:
 	docker compose --profile prod up -d
+
+shadcn:
+	bunx shadcn@latest add
