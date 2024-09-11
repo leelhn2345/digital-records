@@ -2,9 +2,10 @@ import { RouterProvider, createRouter } from "@tanstack/react-router";
 
 // Import the generated route tree
 import { routeTree } from "./routeTree.gen";
-import { NotFound } from "./components/router/not-found.tsx";
-import { ErrorPage } from "./components/router/error-page.tsx";
-import { LoadingPage } from "./components/router/loading-page.tsx";
+import { NotFound } from "./components/routers/not-found";
+import { ErrorPage } from "./components/routers/error-page";
+import { LoadingPage } from "./components/routers/loading-page";
+import { ThemeProvider } from "./providers/theme";
 
 // Create a new router instance
 const router = createRouter({
@@ -22,5 +23,9 @@ declare module "@tanstack/react-router" {
   }
 }
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
 }

@@ -17,12 +17,13 @@ export const Route = createFileRoute("/about")({
     return { ...deps };
   },
   component: About,
+  errorComponent: ({ error }) => <div>{error.message}</div>,
 });
 
 function About() {
   const router = useRouter();
   return (
-    <div className="p-2 flex flex-col">
+    <div className="flex flex-col p-2">
       Hello from About
       <button onClick={() => router.invalidate()}>haha</button>
     </div>
