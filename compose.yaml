@@ -15,6 +15,7 @@ services:
       - prod
     image: leelhn2345/digital-records
     container_name: digital-records
+    restart: unless-stopped
     labels:
       - traefik.enable=true
       - traefik.http.routers.${SERVICE_NAME}.rule=Host(`${DOMAIN_URL}`) || Host (`www.${DOMAIN_URL}`)
