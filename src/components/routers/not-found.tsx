@@ -1,5 +1,3 @@
-import { Navigate } from "@tanstack/react-router";
-
 export function NotFound() {
-  return <Navigate to="/blog" />;
+  return <div>hello this page is not valid</div>;
 }
