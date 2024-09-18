@@ -7,9 +7,6 @@ on:
     types:
       - completed
 
-env:
-  IMAGE_NAME: digital-records
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -28,4 +25,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ vars.DOCKERHUB_USERNAME }}/${{env.IMAGE_NAME}}
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}

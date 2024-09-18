@@ -24,12 +24,12 @@ export function Header() {
 
         <div className="flex items-center gap-x-2">
           <ThemeMenu />
-          <Link to="/sign-in">
-            <Button variant="outline">Sign In</Button>
-          </Link>
-          <Link to="/sign-up">
-            <Button>Sign Up</Button>
-          </Link>
+          <Button variant="outline" asChild>
+            <Link to="/sign-in">Sign In</Link>
+          </Button>
+          <Button asChild>
+            <Link to="/sign-up">Sign Up</Link>
+          </Button>
         </div>
       </div>
     </header>
