@@ -12,10 +12,10 @@ export function Header() {
         backdrop-blur supports-[backdrop-filter]:bg-background/60"
     >
       <div className="container mx-auto flex h-12 justify-between max-sm:px-2">
-        <div className="my-auto md:hidden">
+        <div className="my-auto lg:hidden">
           <SideBar />
         </div>
-        <div className="hidden items-center md:flex">
+        <div className="hidden items-center lg:flex">
           <Link to="/">
             <BookOpenIcon className="mr-2 hover:cursor-pointer" />
           </Link>

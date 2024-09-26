@@ -23,9 +23,6 @@ services:
       - traefik.http.routers.${SERVICE_NAME}.tls.certresolver=myresolver
       - com.centurylinklabs.watchtower.enable=true
       # - traefik.http.routers.digital-records.middlewares=redirect-www-to-root@file
-    expose:
-      - 80
-
     networks:
       - shared-network
 

@@ -27,7 +27,7 @@ function RootComponent() {
   return (
     <>
       <Header />
-      <main className="container mx-auto flex flex-1 border-b max-sm:px-2">
+      <main className="container mx-auto flex flex-1 border-b py-4 max-sm:px-2">
         <Outlet />
       </main>
       <Footer />
