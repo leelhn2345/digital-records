@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
+import { queryOptions } from "@tanstack/react-query";
 import { api } from "@/lib/axios";
 
 interface JobExperience {
@@ -49,7 +49,6 @@ export const Route = createFileRoute("/about")({
 });
 
 function About() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { data } = useSuspenseQuery(resumeOptions);
+  // const { data } = useSuspenseQuery(resumeOptions);
   return <div className="flex flex-col">Hello from About</div>;
 }
