@@ -1,13 +1,15 @@
+import { useQueryErrorResetBoundary } from "@tanstack/react-query";
 import { useRouter } from "@tanstack/react-router";
+import { useEffect } from "react";
 
 export function ErrorPage() {
   const router = useRouter();
-  // const queryErrorResetBoundary = useQueryErrorResetBoundary();
+  const queryErrorResetBoundary = useQueryErrorResetBoundary();
 
-  // useEffect(() => {
-  //   // Reset the query error boundary
-  //   queryErrorResetBoundary.reset();
-  // }, [queryErrorResetBoundary]);
+  useEffect(() => {
+    // Reset the query error boundary
+    queryErrorResetBoundary.reset();
+  }, [queryErrorResetBoundary]);
 
   return (
     <div>

@@ -1,6 +1,7 @@
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
-import { createRootRoute, Outlet } from "@tanstack/react-router";
+import { QueryClient } from "@tanstack/react-query";
+import { createRootRouteWithContext, Outlet } from "@tanstack/react-router";
 import React from "react";
 
 const TanStackRouterDevtools =
@@ -15,7 +16,10 @@ const TanStackRouterDevtools =
         })),
       );
 
-export const Route = createRootRoute({
+interface RouterContext {
+  queryClient: QueryClient;
+}
+export const Route = createRootRouteWithContext<RouterContext>()({
   component: RootComponent,
 });
 
