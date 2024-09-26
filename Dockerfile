@@ -8,6 +8,13 @@ COPY bun.lockb package.json ./
 RUN bun i --frozen-lockfile
 
 COPY . .
+
+# Define build args for build process
+ARG VITE_BACKEND_URL
+
+# Set env vars for build process
+ENV VITE_BACKEND_URL="${VITE_BACKEND_URL}"
+
 RUN bun run build
 
 
