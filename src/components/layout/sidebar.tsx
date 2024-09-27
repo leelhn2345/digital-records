@@ -14,9 +14,12 @@ export function SideBar() {
   return (
     <Sheet>
       <SheetTrigger asChild className="flex">
-        <Menu />
+        <Menu className="hover:cursor-pointer" />
       </SheetTrigger>
-      <SheetContent side="left" className="w-64 dark:bg-background/80">
+      <SheetContent
+        side="left"
+        className="w-64 bg-background/90 dark:bg-background/80"
+      >
         <SheetHeader className="hidden">
           <SheetTitle></SheetTitle>
           <SheetDescription></SheetDescription>
