@@ -90,8 +90,27 @@ function About() {
         <AccordionItem value="skills">
           <AccordionTrigger className="text-xl">Skills</AccordionTrigger>
           <AccordionContent>
-            e fr gertgherth r5yhj yrth trh yrt jtyj rtyj yt nrty rtthrtg hyt nyt
-            jtyj ytyrh rthrt{" "}
+            <div className="mb-4 text-gray-400">
+              The lists here are non-exhaustive.
+            </div>
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <h3 className="text-base font-bold italic">Languages</h3>
+                <p>{data.skills.languages.join(", ")}</p>
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-base font-bold italic">Frameworks</h3>
+                <p>{data.skills.frameworks.join(", ")}</p>
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-base font-bold italic">Tools</h3>
+                <p>{data.skills.tools.join(", ")}</p>
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-base font-bold italic">Others</h3>
+                <p>{data.skills.others.join(", ")}</p>
+              </div>
+            </div>
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="jobExperience">
@@ -101,12 +120,12 @@ function About() {
           <AccordionContent>
             <ol className="relative start-1.5 -mt-5 border-s border-gray-200 dark:border-gray-700">
               {data.jobExperience.map((jobEx) => (
-                <li key={jobEx.companyName} className="mb-8 ms-4">
+                <li key={jobEx.companyName} className="ms-4">
                   <div
                     className="absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200
                       dark:border-gray-900 dark:bg-gray-700"
                   ></div>
-                  <div className="my-4 flex flex-col gap-2">
+                  <div className="my-4 flex flex-col">
                     <a
                       href={jobEx.companyUrl}
                       target="_blank"
@@ -121,11 +140,11 @@ function About() {
                       >
                         <div className="flex items-center justify-between text-base">
                           <h4 className="my-3 italic">{y.jobTitle}</h4>
-                          <time className="mb-1 mr-2 text-sm font-normal leading-none text-muted-foreground">
+                          <time className="mb-1 text-sm font-normal leading-none text-muted-foreground">
                             {y.timeSpan}
                           </time>
                         </div>
-                        <ul className="ml-5 mr-2 list-disc space-y-2 text-justify">
+                        <ul className="ml-5 list-disc space-y-2 text-justify">
                           {y.description.map((desc, num) => (
                             <li key={jobEx.companyName + num}>{desc}</li>
                           ))}
@@ -147,10 +166,11 @@ function About() {
                   <a
                     href={x.projectUrl}
                     className="text-base font-semibold hover:underline hover:underline-offset-4"
+                    target="_blank"
                   >
                     {x.projectName}
                   </a>
-                  <ul className="ml-5 mr-2 mt-4 list-disc space-y-2 text-justify">
+                  <ul className="ml-5 mt-4 list-disc space-y-2 text-justify">
                     {x.description.map((desc, i) => (
                       <li key={x.projectName + i}>{desc}</li>
                     ))}
