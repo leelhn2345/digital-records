@@ -1,6 +1,6 @@
-import { InProgress } from "@/components/routers/in-progress";
+import { ProgressPage } from "@/components/pages/progress-page";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/sign-up")({
-  component: () => <InProgress pageName="Sign-Up" />,
+  component: () => <ProgressPage pageName="Sign-Up" />,
 });

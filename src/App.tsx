@@ -2,12 +2,12 @@ import { RouterProvider, createRouter } from "@tanstack/react-router";
 
 // Import the generated route tree
 import { routeTree } from "./routeTree.gen";
-import { NotFound } from "./components/routers/not-found";
-import { ErrorPage } from "./components/routers/error-page";
-import { LoadingPage } from "./components/routers/loading-page";
 import { ThemeProvider } from "./providers/theme";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { NotFoundPage } from "./components/pages/not-found-page";
+import { ErrorPage } from "./components/pages/error-page";
+import { LoadingPage } from "./components/pages/loading-page";
 
 const queryClient = new QueryClient();
 
@@ -15,7 +15,7 @@ const queryClient = new QueryClient();
 const router = createRouter({
   routeTree,
   defaultPreload: "intent",
-  defaultNotFoundComponent: NotFound,
+  defaultNotFoundComponent: NotFoundPage,
   defaultErrorComponent: ErrorPage,
   defaultPendingComponent: LoadingPage,
   context: {

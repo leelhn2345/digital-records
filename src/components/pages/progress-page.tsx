@@ -1,7 +1,7 @@
 type Props = {
   pageName?: string;
 };
-export function InProgress({ pageName }: Props) {
+export function ProgressPage({ pageName }: Props) {
   return (
     <div className="container flex items-center justify-center">
       <div className="space-y-4 text-center">
@@ -14,7 +14,7 @@ export function InProgress({ pageName }: Props) {
         {pageName ? (
           <p>
             Sorry, the <span className="text-xl font-bold">{pageName}</span>{" "}
-            page is currently not available
+            page is currently not available.
           </p>
         ) : (
           <p className="">Sorry, this page is currently not available.</p>
